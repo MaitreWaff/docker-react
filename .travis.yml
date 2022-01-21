@@ -12,6 +12,7 @@ script:
   - docker run -e CI=true waffoluc/docker-react npm run test
 
 deploy:
+  skip_cleanup: true
   provider: elasticbeanstalk
   region: "us-east-1"
   app: "docker-react"
