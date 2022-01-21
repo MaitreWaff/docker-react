@@ -1,5 +1,3 @@
-access_key_id: $AWS_ACCESS_KEY
-secret_access_key: $AWS_SECRET_KEY
 language: generic
 sudo: required
 services:
@@ -12,6 +10,8 @@ script:
   - docker run -e CI=true waffoluc/docker-react npm run test
 
 deploy:
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_KEY
   skip_cleanup: true
   provider: elasticbeanstalk
   region: "us-east-1"
